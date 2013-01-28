@@ -1,7 +1,7 @@
 body {
   background: white;
   margin: 10em auto 0;
-  width: 40em;
+  width: 12em;
 }
 
 html {
@@ -9,12 +9,13 @@ html {
 }
 
 .ISMs {
-  background: gainsboro;
-  border: 10px solid;
+  background: yellow;
+  border: 10px solid darkRed;
+  margin-top: 2em;
   padding: 1em;
   text-align: center;
 }
 
 .ISMs img {
-  border: 1px solid;
+  border: 6px solid orange;
 }
