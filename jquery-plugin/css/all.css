@@ -1,0 +1,20 @@
+body {
+  background: white;
+  margin: 10em auto;
+  width: 40em;
+}
+
+html {
+  background: gainsboro;
+}
+
+.ISMs {
+  background: gainsboro;
+  border: 10px solid;
+  padding: 1em;
+  text-align: center;
+}
+
+.ISMs img {
+  border: 1px solid;
+}
