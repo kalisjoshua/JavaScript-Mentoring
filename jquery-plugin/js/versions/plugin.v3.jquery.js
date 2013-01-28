@@ -3,6 +3,11 @@
 
     return this                                                 // return the jQuery collection to not break chaining
       .each(function (indx, item) {                             // create function scope for each plugin on a page
+        /*
+          These variables and functions need to be defined inside this each loop
+          to localize them all to the (DOM/jQuery) element being iterated over
+          so that each plugin item on a page can have its own life-cycle.
+          */
         var counter   = 0,                                      // limit the number of rotations of the animation
             hovering  = false,                                  // indicator of user interaction
             img       = $("<img />"),                           // reference to DOM object that will be used for displaying the image
@@ -53,8 +58,8 @@ $.fn.ready(function () {
     .ISMs({
       "folder": folder,
       "images": images,
-      "limit": 2,
-      "speed": 40
+      "limit": 4,
+      "speed": 100
     });
 
   $(".ISMs.slow")

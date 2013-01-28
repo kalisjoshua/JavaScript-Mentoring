@@ -3,6 +3,11 @@
 
     return this                                                 // return the jQuery collection to not break chaining
       .each(function (indx, item) {                             // create function scope for each plugin on a page
+        /*
+          These variables and functions need to be defined inside this each loop
+          to localize them all to the (DOM/jQuery) element being iterated over
+          so that each plugin item on a page can have its own life-cycle.
+          */
         var hovering  = false,                                  // indicator of user interaction
             img       = $("<img />"),                           // reference to DOM object that will be used for displaying the image
             imgList   = images.slice(0),                        // copy of images list so that each jQuery object will have its own
