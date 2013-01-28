@@ -1,4 +1,4 @@
-var folder = "../img",
+var folder = "img",
     images = [
       "ISM_Awareness.png",
       "ISM_BelieveIt.png",

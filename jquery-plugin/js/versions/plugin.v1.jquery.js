@@ -15,8 +15,8 @@
         nextImage(true);                                        // imidiately display the first image and delay all following
 
         $(item).html(img);                                      // add the image to the DOM so users can see it
-      });
-  };
+      });                                                       // end of $.each
+  };                                                            // end of plugin definition
 }(jQuery));
 
 
