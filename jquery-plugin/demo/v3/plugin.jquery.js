@@ -1,7 +1,7 @@
 (function ($) {
   $.fn.ISMs = function (options) {                              // define jQuery plugin on prototype (fn, a shortcut for prototype)
 
-    $.extend(options, $.fn.ISM.defaults);                       // make sure that there are values for all options (optimistically)
+    $.extend(options, $.fn.ISMs.defaults);                       // make sure that there are values for all options (optimistically)
 
     return this                                                 // return the jQuery collection to not break chaining
       .each(function (indx, item) {                             // create function scope for each plugin on a page
