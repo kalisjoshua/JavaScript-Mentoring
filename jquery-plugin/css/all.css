@@ -1,11 +1,12 @@
 body {
   background: white;
-  margin: 10em auto 0;
+  margin: 2em auto 0;
   width: 12em;
 }
 
 html {
   background: gainsboro;
+  zoom: 2;
 }
 
 .ISMs {

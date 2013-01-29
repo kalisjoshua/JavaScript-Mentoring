@@ -4,9 +4,10 @@
     return this                                                 // return the jQuery collection to not break chaining
       .each(function (indx, item) {                             // create function scope for each plugin on a page
         /*
-          These variables and functions need to be defined inside this each loop
-          to localize them all to the (DOM/jQuery) element being iterated over
-          so that each plugin item on a page can have its own life-cycle.
+          These variables and functions need to be defined inside
+          this each loop to localize them all to the (DOM/jQuery)
+          element being iterated over so that each plugin item
+          on a page can have its own life-cycle.
           */
         var hovering  = false,                                  // indicator of user interaction
             img       = $("<img />"),                           // reference to DOM object that will be used for displaying the image
@@ -14,11 +15,11 @@
             pending;                                            // holds reference to pending timeout execution for clearing
 
         function animate (now) {                                // factored out the animation logic from the 'nextImage' logic
-          clearTimeout(pending);                                // clear timeouts if there is one since this method will be used in differenct contexts
+          clearTimeout(pending);                                // clear timeouts if there is one since this method will be used in different contexts
 
           if (!hovering) {                                      // only if the user is not currently hovering should the animation continue
             pending = setTimeout(function () {                  // create a composite function to do the actions of the animation
-              nextImage();                                      // let the functio do its job
+              nextImage();                                      // let the function do its job
               animate();                                        // continue the animation
             }, (now ? 1 : speed));
           }
@@ -30,7 +31,7 @@
           // setTimeout(nextImage, (now ? 1 : speed));          // removed to better adhere to what the function is actually for
         }
 
-        animate(true);                                          // imidiately display the first image and delay all following
+        animate(true);                                          // immediately display the first image and delay all following
 
         $(item)
           .html(img)                                            // add the image to the DOM so users can see it

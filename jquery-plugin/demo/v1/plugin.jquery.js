@@ -4,9 +4,10 @@
     return this                                                 // return the jQuery collection to not break chaining
       .each(function (indx, item) {                             // create function scope for each plugin on a page
         /*
-          These variables and functions need to be defined inside this each loop
-          to localize them all to the (DOM/jQuery) element being iterated over
-          so that each plugin item on a page can have its own life-cycle.
+          These variables and functions need to be defined inside
+          this each loop to localize them all to the (DOM/jQuery)
+          element being iterated over so that each plugin item
+          on a page can have its own life-cycle.
           */
         var img     = $("<img />"),                             // reference to DOM object that will be used for displaying the image
             imgList = images.slice(0);                          // copy of images list so that each jQuery object will have its own
@@ -17,7 +18,7 @@
           setTimeout(nextImage, (now ? 1 : speed));             // continue/start the animation and run infinitely
         }
 
-        nextImage(true);                                        // imidiately display the first image and delay all following
+        nextImage(true);                                        // immediately display the first image and delay all following
 
         $(item).html(img);                                      // add the image to the DOM so users can see it
       });                                                       // end of $.each
