@@ -1,7 +1,8 @@
 (function ($) {
   $.fn.ISMs = function (options) {                              // define jQuery plugin on prototype (fn, a shortcut for prototype)
     var transition = {
-          fade: function (front, src) {
+          fade: function (behind, front, src) {
+            behind.attr("src", src);                            // change the image behind so the fade out of the front will reveal the new image
             front
               .fadeOut(200, function () {                       // fade out the front/previous image
                 front.attr("src", src).show();                  // after, update the src of the front and show it for the next rotation
@@ -15,7 +16,8 @@
           slideUp    : slide.bind(null, [{top : "-100%"}, {top : 10}])
         };
 
-    function slide (pos, front, src) {
+    function slide (pos, behind, front, src) {
+      behind.attr("src", src);                                  // change the image behind so the fade out of the front will reveal the new image
       front
         .animate(pos[0], 200, function () {                     // slide out the front image
           front.attr("src", src).css(pos[1]);                   // after, update the src of the front and show it for the next rotation
@@ -55,12 +57,10 @@
           counter++;                                            // increment the counter to stop the animation at some number of complete rotations of all images
           var src = options.folder + "/" + imgList[0];
 
-          behind.attr("src", src);                              // change the image behind so the fade out of the front will reveal the new image
-
           if (options.transition in transition) {               // protect against an invalid transition value in options object
-            transition[options.transition](front, src);         // call the defined optional transition function
+            transition[options.transition](behind, front, src); // call the defined optional transition function
           } else {
-            transition.fade(front, src);                        // execute a fallback (default) transition function
+            transition.fade(behind, front, src);                // execute a fallback (default) transition function
           }
           
           imgList = imgList.slice(1).concat(imgList[0]);        // move the displayed image to the end of the list
