@@ -9,7 +9,7 @@
               });
           },
 
-          slideDown  : slide.bind(null, [{top :  "100%"}, {top : 10}]), // setup predefined transition functions
+          slideDown  : slide.bind(null, [{top :  "100%"}, {top : 10}]), // setup predefined slide transition functions
           slideLeft  : slide.bind(null, [{left: "-100%"}, {left: 10}]),
           slideRight : slide.bind(null, [{left:  "100%"}, {left: 10}]),
           slideUp    : slide.bind(null, [{top : "-100%"}, {top : 10}])
