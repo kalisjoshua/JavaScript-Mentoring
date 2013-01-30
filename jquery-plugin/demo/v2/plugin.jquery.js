@@ -52,6 +52,6 @@
 // This should be in app.js but it is easier to have it in here for demo
 // purposes, since the config will be changing over time.
 $.fn.ready(function () {
-  $(".ISMs.fast").ISMs(folder, images, 400);
-  $(".ISMs.slow").ISMs(folder, images, 4000);
+  $(".ISMs.fast").ISMs(folder, images, 500);
+  $(".ISMs.slow").ISMs(folder, images, 1000);
 });

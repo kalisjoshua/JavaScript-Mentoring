@@ -12,11 +12,19 @@ html {
 .ISMs {
   background: yellow;
   border: 10px solid darkRed;
+  float: left;
+  height: 162px;
   margin-top: 2em;
-  padding: 1em;
+  position: relative;
   text-align: center;
+  width: 162px;
 }
 
 .ISMs img {
   border: 6px solid orange;
+  height: 130px;
+  left: 10px;
+  position: absolute;
+  top: 10px;
+  width: 130px;
 }

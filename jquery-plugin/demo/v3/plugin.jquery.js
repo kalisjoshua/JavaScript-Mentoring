@@ -1,7 +1,7 @@
 (function ($) {
   $.fn.ISMs = function (options) {                              // define jQuery plugin on prototype (fn, a shortcut for prototype)
 
-    $.extend(options, $.fn.ISMs.defaults);                       // make sure that there are values for all options (optimistically)
+    options = $.extend({}, $.fn.ISMs.defaults, options);        // make sure that there are values for all options (optimistically)
 
     return this                                                 // return the jQuery collection to not break chaining
       .each(function (indx, item) {                             // create function scope for each plugin on a page
@@ -29,11 +29,10 @@
           }
         }
 
-        function nextImage (now) {
+        function nextImage () {
           counter++;                                            // increment the counter to stop the animation at some number of complete rotations of all images
           img.attr("src", options.folder + "/" + imgList[0]);   // swap out the the currently displayed image for the next one
           imgList = imgList.slice(1).concat(imgList[0]);        // move the displayed image to the end of the list
-          // setTimeout(nextImage, (now ? 1 : speed));          // removed to better adhere to what the function is actually for
         }
 
         animate(true);                                          // immediately display the first image and delay all following
@@ -64,17 +63,17 @@
 $.fn.ready(function () {
   $(".ISMs.fast")
     .ISMs({
-      "folder": folder,
-      "images": images,
-      "limit": 4,
-      "speed": 100
+      "folder" : folder,
+      "images" : images,
+      "limit"  : 2,
+      "speed"  : 500
     });
 
   $(".ISMs.slow")
     .ISMs({
-      "folder": folder,
-      "images": images,
-      "limit": 1,
-      "speed": 400
+      "folder" : folder,
+      "images" : images,
+      "limit"  : 1,
+      "speed"  : 1000
     });
 });
