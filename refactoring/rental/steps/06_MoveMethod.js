@@ -29,7 +29,7 @@ function Movie (title, priceCode) {
     return result;
   };
 
-  this.getFreqRenterPoints = function (dayRented) {
+  this.getFreqRenterPoints = function (daysRented) {
     // add bonus for a two day new release rental
     if ((this.getPriceCode() === Movie.NEW_RELEASE) && daysRented > 1) {
       return 2;
