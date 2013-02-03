@@ -61,7 +61,6 @@ function Customer (name) {
 
   this.statement = function () {
     var each,
-        format,
         frequentRenterPoints = 0,
         result = "Rental Record for %\n".replace("%", name),
         spacing,
@@ -99,11 +98,10 @@ function Customer (name) {
 
       // NOTE! added lines for formatting
       spacing = Array.apply(null, Array(30 - each.getMovie().getTitle().length)).join(" ");
-      format = "  + {title}" + spacing + "${price}\n";
 
       // show figures for this rental
-      result += format
-        .replace("{title}", each.getMovie().getTitle())
+      result += "  + {title} ${price}\n"
+        .replace("{title}", each.getMovie().getTitle() + spacing)
         .replace("{price}", thisAmount.toFixed(2));
         
       totalAmount += thisAmount;

@@ -108,8 +108,8 @@ function Customer (name) {
       spacing = Array.apply(null, Array(30 - each.getMovie().getTitle().length)).join(" ");
 
       // show figures for this rental
-      result += ("  + {title}" + spacing + "${price}\n")
-        .replace("{title}", each.getMovie().getTitle())
+      result += "  + {title} ${price}\n"
+        .replace("{title}", each.getMovie().getTitle() + spacing)
         .replace("{price}", thisAmount.toFixed(2));
         
       totalAmount += thisAmount;
