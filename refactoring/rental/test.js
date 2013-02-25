@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 var fs = require("fs"),
     
     files = fs.readdirSync("./steps"),
